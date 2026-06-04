@@ -1,16 +1,41 @@
-# React + Vite
+TurnoFlow - Frontend
+Frontend de TurnoFlow, sistema de gestión de turnos. Desarrollado con React y Vite.
+Tecnologías
+React · Vite · Axios · React Router DOM · CSS puro
+Requisitos previos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Node.js 18+
+El backend de TurnoFlow corriendo en http://localhost:8080
 
-Currently, two official plugins are available:
+Cómo levantar el proyecto
+bash# 1. Clonar el repositorio
+git clone https://github.com/Facus006/TurnoFlow-Front.git
+cd TurnoFlow-Front
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 2. Instalar dependencias
+npm install
 
-## React Compiler
+# 3. Correr la aplicación
+npm run dev
+La app queda disponible en http://localhost:5173
+Funcionalidades por rol
+USER
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Registro y login
+Ver negocios y sus servicios
+Reservar, consultar y cancelar turnos
+Editar perfil, contraseña y email
 
-## Expanding the ESLint configuration
+NEGOCIO
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Crear y editar su negocio
+Gestionar servicios (crear, editar, activar/desactivar)
+Ver, confirmar, rechazar y completar turnos
+
+ADMIN
+
+Gestión completa de usuarios (roles, estado, eliminación)
+Ver turnos de cualquier negocio
+
+Autenticación
+Usa JWT con refresh token automático. Cuando el access token expira, se renueva de forma transparente sin interrumpir al usuario.
