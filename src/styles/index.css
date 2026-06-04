@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── Variables ─── */
+:root {
+  --bg:          #0a0a0f;
+  --bg-card:     rgba(255,255,255,0.04);
+  --bg-card-h:   rgba(255,255,255,0.07);
+  --border:      rgba(255,255,255,0.08);
+  --border-h:    rgba(139,92,246,0.4);
+  --accent:      #7c3aed;
+  --accent-soft: #a78bfa;
+  --accent-glow: rgba(124,58,237,0.25);
+  --text:        #f1f0f5;
+  --muted:       #6b6880;
+  --danger:      #ef4444;
+  --success:     #10b981;
+  --warning:     #f59e0b;
+  --radius:      14px;
+  --radius-sm:   8px;
+  --shadow:      0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grid texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+
+a { color: var(--accent-soft); text-decoration: none; transition: color 0.2s; }
+a:hover { color: #fff; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 99px; }

@@ -1,0 +1,64 @@
+/* ─── Navbar ─── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: rgba(10,10,15,0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Logo / Brand (first link = Inicio) */
+nav a:first-child {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  margin-right: auto;
+  letter-spacing: -0.03em;
+}
+
+nav a:first-child::before {
+  content: '◆ ';
+  color: var(--accent);
+}
+
+nav a:not(:first-child) {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, background 0.2s;
+}
+
+nav a:not(:first-child):hover {
+  color: var(--text);
+  background: var(--bg-card-h);
+}
+
+nav button {
+  margin-left: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+nav button:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+  background: rgba(239,68,68,0.06);
+}

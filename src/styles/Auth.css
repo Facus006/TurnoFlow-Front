@@ -1,0 +1,148 @@
+/* ─── Auth pages: Login & Register ─── */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Glow blob behind form */
+.auth-page::after {
+  content: '';
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(124,58,237,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(10px);
+  animation: fadeUp 0.4s ease both;
+}
+
+.auth-card .auth-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.auth-card .auth-logo span { color: var(--accent-soft); }
+
+.auth-card .auth-subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+/* Form inside auth card */
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* ─── Inputs ─── */
+.auth-card input,
+.auth-card textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.auth-card input::placeholder,
+.auth-card textarea::placeholder {
+  color: var(--muted);
+}
+
+.auth-card input:focus,
+.auth-card textarea:focus {
+  border-color: var(--accent);
+  background: rgba(124,58,237,0.06);
+}
+
+/* ─── Primary button ─── */
+.auth-card button[type="submit"],
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.auth-card button[type="submit"]:hover,
+.btn-primary:hover {
+  background: #6d28d9;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.auth-card button[type="submit"]:active,
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.auth-card button[type="submit"]:disabled,
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Error / redirect text ─── */
+.auth-card .auth-error {
+  color: var(--danger);
+  font-size: 0.82rem;
+  text-align: center;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+}
+
+.auth-card .auth-redirect {
+  text-align: center;
+  font-size: 0.83rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.auth-card .auth-redirect span {
+  color: var(--accent-soft);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.auth-card .auth-redirect span:hover { color: #fff; }
