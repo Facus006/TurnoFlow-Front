@@ -1,13 +1,17 @@
 TurnoFlow - Frontend
 Frontend de TurnoFlow, sistema de gestión de turnos. Desarrollado con React y Vite.
-Tecnologías
-React · Vite · Axios · React Router DOM · CSS puro
-Requisitos previos
+Tecnologías:
+
+React · Vite · Axios · React Router DOM · CSS puro.
+
+Requisitos previos:
 
 Node.js 18+
-El backend de TurnoFlow corriendo en http://localhost:8080
+El backend de TurnoFlow corriendo en http://localhost:8080.
 
-Cómo levantar el proyecto
+
+Cómo levantar el proyecto:
+
 
 # 1. Clonar el repositorio
 git clone https://github.com/Facus006/TurnoFlow-Front.git
@@ -19,7 +23,8 @@ npm install
 # 3. Correr la aplicación
 npm run dev
 La app queda disponible en http://localhost:5173
-Funcionalidades por rol
+
+# Funcionalidades por rol
 USER
 
 Registro y login
