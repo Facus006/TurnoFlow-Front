@@ -67,16 +67,16 @@ JWT con refresh token automático. Cuando el access token expira se renueva de f
 ## 📸 Screenshots
 
 ### Login
-![Login](https://github.com/user-attachments/assets/0c1f8b4a-b9c2-4213-a6d7-af9ce1b3c878)
+![Login](https://github.com/user-attachments/assets/63c3463d-f539-4f30-95bb-6e0e30ab8ffa)
 
 ### Negocios
-![Negocios](https://github.com/user-attachments/assets/de0391a2-0d97-43f1-bedc-35cb6ca14cfc)
+![Negocios](https://github.com/user-attachments/assets/21c94f8f-b866-446e-9df3-243c105bc606)
 
 ### Mi Negocio
-![Mi Negocio](https://github.com/user-attachments/assets/44323145-2ad4-419b-a384-b25639e4a94d)
+![Mi Negocio](https://github.com/user-attachments/assets/4f0718d1-cba4-47ff-a8ef-e006892fa15e)
 
 ### Turnos del Negocio
-![Turnos](https://github.com/user-attachments/assets/c691e495-150b-4d97-b14e-58679aab6a61)
+![Turnos del Negocio](https://github.com/user-attachments/assets/8100835a-0738-4f4b-b1c1-37cf87e2c2ea)
 
 ### Panel de Administración
-![Admin](https://github.com/user-attachments/assets/88b57112-4e53-45af-8c9f-3b4eb6b44a9a)
+![Panel de Administración](https://github.com/user-attachments/assets/f2792af4-13f0-479a-b1d7-e5f58dc33b2b)
