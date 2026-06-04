@@ -8,7 +8,8 @@ Node.js 18+
 El backend de TurnoFlow corriendo en http://localhost:8080
 
 Cómo levantar el proyecto
-bash# 1. Clonar el repositorio
+
+# 1. Clonar el repositorio
 git clone https://github.com/Facus006/TurnoFlow-Front.git
 cd TurnoFlow-Front
 
