@@ -22,6 +22,8 @@ Frontend del sistema de gestión de turnos [TurnoFlow](https://github.com/Facus0
 
 ## 🚀 Instalación
 
+Opción 1: Desarrollo local (sin Docker)
+
 ```bash
 git clone https://github.com/Facus006/TurnoFlow-Front.git
 cd TurnoFlow-Front
@@ -32,6 +34,25 @@ npm run dev
 La app queda disponible en `http://localhost:5173`
 
 ---
+
+Opción 2: Con Docker (recomendado si usás backend dockerizado)
+
+👉 Primero asegurate de tener corriendo el backend:
+
+```bash
+cd TurnoFlow-Back
+docker compose up --build
+```
+
+Luego el frontend:
+
+```bash
+cd TurnoFlow-Front
+docker compose up --build
+```
+
+---
+
 
 ## 👥 Funcionalidades por rol
 
