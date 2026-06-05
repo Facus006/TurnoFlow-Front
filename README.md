@@ -40,7 +40,7 @@ Opción 2: Con Docker (recomendado si usás backend dockerizado)
 👉 Primero asegurate de tener corriendo el backend:
 
 ```bash
-cd TurnoFlow-Back
+cd TurnoFlow
 docker compose up --build
 ```
 
