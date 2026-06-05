@@ -10,37 +10,48 @@ const api = axios.create({
 let isRefreshing = false;
 let pendingRequests = [];
 
+const isAuthRequest = (url) => {
+    return (
+        url?.includes("/auth/login") ||
+        url?.includes("/auth/registro") ||
+        url?.includes("/auth/refresh")
+    );
+};
+
 const processPending = (error, token = null) => {
     pendingRequests.forEach((p) => {
-        if (error) {
-            p.reject(error);
-        } else {
-            p.resolve(token);
-        }
+        if (error) p.reject(error);
+        else p.resolve(token);
     });
     pendingRequests = [];
 };
 
+
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem("accessToken");
-    if (token) {
+
+
+    if (token && !isAuthRequest(config.url)) {
         config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
 });
+
 
 api.interceptors.response.use(
     (response) => response,
     async (error) => {
-
         const originalRequest = error.config;
 
         if (error.response?.status === 401 && !originalRequest._retry) {
-            if (originalRequest.url.includes("/auth/")) {
+
+
+            if (isAuthRequest(originalRequest.url)) {
                 return Promise.reject(error);
             }
+
             if (isRefreshing) {
-                // ya hay un refresh en curso, esperamos que termine
                 return new Promise((resolve, reject) => {
                     pendingRequests.push({ resolve, reject });
                 }).then((token) => {
@@ -60,18 +71,21 @@ api.interceptors.response.use(
                     { refreshToken }
                 );
 
-                const nuevoToken = response.data.accessToken;
-                localStorage.setItem("accessToken", nuevoToken);
+                const newToken = response.data.accessToken;
 
-                processPending(null, nuevoToken);
+                localStorage.setItem("accessToken", newToken);
 
-                originalRequest.headers.Authorization = `Bearer ${nuevoToken}`;
+                processPending(null, newToken);
+
+                originalRequest.headers.Authorization = `Bearer ${newToken}`;
                 return api(originalRequest);
 
             } catch (err) {
                 processPending(err, null);
+
                 localStorage.removeItem("accessToken");
                 localStorage.removeItem("refreshToken");
+
                 window.location.href = "/";
                 return Promise.reject(err);
             } finally {
